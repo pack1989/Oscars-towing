@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Oscar's Towing & Recovery | 24/7 Towing in Raleigh, NC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Oscar's Towing & Recovery provides 24/7 towing and roadside assistance in Raleigh, NC and nearby areas with fast response and friendly drivers." />
+  <meta name="description" content="Oscar's Towing & Recovery provides 24/7 towing and roadside assistance in Raleigh, NC and surrounding areas. Fast response, friendly drivers, and fair pricing." />
 
   <style>
     :root {
@@ -429,126 +429,15 @@
     <div class="contact-card">
       <h2>Request Tow or Quote</h2>
 
-      <!-- IMPORTANT: direct POST to FormSubmit; no JS interception -->
+      <!-- FORM: FormSubmit + redirect to thank-you page -->
       <form action="https://formsubmit.co/onasamune@yahoo.com" method="POST">
 
-        <!-- Redirect to thank-you page AFTER successful submit
-             Replace YOURDOMAIN with your real domain when live -->
-        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+        <!-- Redirect to your live thank-you page -->
+        <input type="hidden" name="_next" value="https://pack1989.github.io/Oscars-towing/thank-you.html">
 
         <!-- FormSubmit settings -->
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_subject" value="New Tow Request Submission">
 
-        <div class="contact-grid">
-          <div>
-            <label for="firstName">First Name</label>
-            <input id="firstName" name="First Name" type="text" required />
-          </div>
-          <div>
-            <label for="lastName">Last Name</label>
-            <input id="lastName" name="Last Name" type="text" />
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="Email" type="email" required />
-          </div>
-          <div>
-            <label for="phone">Phone</label>
-            <input id="phone" name="Phone" type="tel" required />
-          </div>
-        </div>
-
-        <div style="margin-top:.4rem;">
-          <label for="location">Pickup Location</label>
-          <input id="location" name="Pickup Location" type="text" />
-        </div>
-
-        <div style="margin-top:.4rem;">
-          <label for="message">How can we help?</label>
-          <textarea id="message" name="Message" required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="margin-top:.8rem;">
-          Send Tow Request
-        </button>
-
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © <span id="year"></span> Oscar's Towing &amp; Recovery · Raleigh, NC
-</footer>
-
-<!-- CHATBOX -->
-<div class="chat-toggle" id="chat-toggle">💬 Chat</div>
-<div class="chatbox" id="chatbox">
-  <div class="chat-body" id="chat-body">
-    <div class="chat-msg agent">
-      Hi! Ask about ETA, pricing, or service area. For emergencies, calling is always fastest.
-    </div>
-  </div>
-  <div class="chat-input-row">
-    <input id="chat-input" type="text" placeholder="Ask a quick question..." />
-    <button id="chat-send">➤</button>
-  </div>
-</div>
-
-<script>
-  // Footer year
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Simple rule-based chat
-  const chatbox = document.getElementById("chatbox");
-  const toggle = document.getElementById("chat-toggle");
-  const chatBody = document.getElementById("chat-body");
-  const chatInput = document.getElementById("chat-input");
-  const chatSend = document.getElementById("chat-send");
-
-  toggle.onclick = () => chatbox.classList.toggle("open");
-
-  function appendMsg(text, sender){
-    const div = document.createElement("div");
-    div.className = "chat-msg " + sender;
-    div.textContent = text;
-    chatBody.appendChild(div);
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }
-
-  function handleChat(){
-    const val = chatInput.value.trim();
-    if(!val) return;
-    appendMsg(val, "user");
-    chatInput.value = "";
-    const t = val.toLowerCase();
-
-    let reply;
-    if(t.includes("eta") || t.includes("how long") || t.includes("arrival")){
-      reply = "Most calls are reached within about 30–60 minutes, depending on traffic and exact location.";
-    } else if(t.includes("price") || t.includes("cost") || t.includes("how much")){
-      reply = "Pricing depends on distance, vehicle, and situation. Use the form above or call for an exact quote.";
-    } else if(t.includes("area") || t.includes("where") || t.includes("service")){
-      reply = "We’re based in Raleigh and regularly serve many nearby communities like Cary, Garner, Clayton, and more.";
-    } else if(t.includes("call") || t.includes("phone") || t.includes("number")){
-      reply = "You can reach dispatch 24/7 at (919) 795-7237.";
-    } else {
-      reply = "Thanks for reaching out! I’m a simple helper bot. For specifics or emergencies, please call (919) 795-7237.";
-    }
-
-    setTimeout(() => appendMsg(reply, "agent"), 350);
-  }
-
-  chatSend.onclick = handleChat;
-  chatInput.addEventListener("keydown", (e)=>{
-    if(e.key === "Enter"){
-      e.preventDefault();
-      handleChat();
-    }
-  });
-</script>
-
-</body>
-</html>
+        <div class="contact-gr
