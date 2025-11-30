@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You | Oscar's Towing & Recovery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Thank you for contacting Oscar's Towing & Recovery. We have received your tow request." />
+  <style>
+    :root {
+      --bg-dark:#05070a; --accent-red:#d7263d; --accent-yellow:#f7c948;
+      --text-light:#f7fafc;--text-muted:#a0aec0;--card:#151923;
+      --max-width:640px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+    body{
+      min-height:100vh;
+      background:radial-gradient(circle at top,#141823,#05070a);
+      color:var(--text-light);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:1.5rem;
+    }
+    .card{
+      max-width:var(--max-width);
+      width:100%;
+      background:var(--card);
+      border-radius:18px;
+      border:1px solid #252b3a;
+      padding:2rem 1.8rem;
+      box-shadow:0 18px 45px rgba(0,0,0,.6);
+      text-align:center;
+    }
+    .logo{
+      width:50px;height:50px;
+      border-radius:16px;
+      background:linear-gradient(135deg,#facc15,#f97316,#d7263d);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:1.4rem;color:#111;
+      margin:0 auto 1rem;
+    }
+    h1{
+      font-size:1.8rem;
+      margin-bottom:.5rem;
+    }
+    p{
+      font-size:.95rem;
+      color:var(--text-muted);
+      margin-bottom:1.2rem;
+    }
+    .highlight{
+      color:var(--accent-yellow);
+      font-weight:600;
+    }
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.7rem;
+      justify-content:center;
+      margin-top:1.2rem;
+    }
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:.65rem 1.4rem;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:.9rem;
+      border:none;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    a.btn-primary{
+      background:linear-gradient(135deg,var(--accent-red),#f97316);
+      color:#fff;
+    }
+    a.btn-ghost{
+      border:1px solid #4b5563;
+      color:var(--text-light);
+      background:transparent;
+    }
+    .small{
+      margin-top:1.2rem;
+      font-size:.8rem;
+      color:var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo">O</div>
+    <h1>Thank you for reaching out!</h1>
+    <p>
+      We’ve received your tow/roadside request and will review it as soon as possible.
+      If this is <span class="highlight">urgent</span>, please call us directly so we can dispatch a truck right away:
+    </p>
+    <p class="highlight">📞 (919) 795-7237</p>
+
+    <div class="btn-row">
+      <a href="tel:+19197957237" class="btn btn-primary">Call Now</a>
+      <a href="index.html" class="btn btn-ghost">Back to Home</a>
+    </div>
+
+    <p class="small">
+      A confirmation has been sent to our dispatch email. A team member may call or text you for more details if needed.
+    </p>
+  </main>
+</body>
+</html>
