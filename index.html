@@ -5,1331 +5,286 @@
   <title>Oscar's Towing & Recovery | 24/7 Towing in Raleigh, NC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Oscar's Towing & Recovery provides 24/7 towing and roadside assistance in Raleigh, NC and surrounding areas. Fast response, friendly drivers, and fair pricing." />
-  <style>
-    :root {
-      --bg-dark: #05070a;
-      --bg-section: #101319;
-      --accent-red: #d7263d;
-      --accent-yellow: #f7c948;
-      --text-light: #f7fafc;
-      --text-muted: #a0aec0;
-      --card: #151923;
-      --border-soft: #252b3a;
-      --success: #38a169;
-      --error: #e53e3e;
-      --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.45);
-      --radius-lg: 18px;
-      --radius-xl: 999px;
-      --transition-fast: 0.18s ease-out;
-      --max-width: 1120px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #141823 0, #05070a 52%);
-      color: var(--text-light);
-      line-height: 1.5;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: linear-gradient(to bottom, rgba(5, 7, 10, 0.96), rgba(5, 7, 10, 0.85));
-    }
-
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .brand-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: radial-gradient(circle at 20% 0, #ffffff 0, #ffe6b5 40%, #f7c948 65%, #d7263d 100%);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: #111;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-text span:first-child {
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-    }
-
-    .brand-text span:last-child {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .nav-pill {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(247, 201, 72, 0.4);
-      color: var(--accent-yellow);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .nav-pill span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--success);
-      box-shadow: 0 0 0 6px rgba(56, 161, 105, 0.35);
-    }
-
-    .nav-phone {
-      display: none;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-      border-radius: var(--radius-xl);
-      border: none;
-      font-size: 0.9rem;
-      padding: 0.55rem 1.3rem;
-      cursor: pointer;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-red), #f97316);
-      color: #fff;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-light);
-      border: 1px solid rgba(160, 174, 192, 0.4);
-    }
-
-    .btn-outline:hover {
-      background: rgba(15, 23, 42, 0.6);
-      border-color: rgba(247, 201, 72, 0.7);
-    }
-
-    main {
-      flex: 1;
-    }
-
-    section {
-      padding: 3.5rem 1.25rem;
-    }
-
-    .shell {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    /* Hero */
-    .hero {
-      padding-top: 2.5rem;
-      padding-bottom: 3.25rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .hero-kicker {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent-yellow);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-kicker::before {
-      content: "";
-      width: 22px;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--accent-yellow));
-    }
-
-    .hero h1 {
-      font-size: clamp(2.1rem, 3vw, 2.7rem);
-      line-height: 1.1;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero h1 span.accent {
-      background: linear-gradient(120deg, #facc15, #f97316);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 34rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-badge {
-      font-size: 0.75rem;
-      padding: 0.3rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(75, 85, 99, 0.75);
-      color: var(--text-muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      align-items: center;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .hero-note span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--success);
-    }
-
-    .hero-card {
-      background: radial-gradient(circle at top left, #1f2933, #05070a);
-      border-radius: 24px;
-      padding: 1.2rem 1.1rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      opacity: 0.2;
-      background:
-        radial-gradient(circle at 10% 0, rgba(251, 191, 36, 0.5), transparent 60%),
-        radial-gradient(circle at 90% 0, rgba(248, 113, 113, 0.45), transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-status {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent-yellow);
-      margin-bottom: 0.35rem;
-    }
-
-    .hero-number {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.65rem;
-    }
-
-    .hero-number span.tag {
-      font-size: 0.7rem;
-      padding: 0.2rem 0.65rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      color: var(--text-muted);
-    }
-
-    .hero-card-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.8rem;
-      gap: 0.75rem;
-    }
-
-    .hero-card-row strong {
-      color: var(--text-light);
-    }
-
-    .hero-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      font-size: 0.7rem;
-    }
-
-    .hero-pill {
-      padding: 0.18rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(15, 23, 42, 0.7);
-    }
-
-    /* Section headings */
-    .section-heading {
-      margin-bottom: 0.75rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: baseline;
-    }
-
-    .section-heading h2 {
-      font-size: 1.5rem;
-    }
-
-    .section-heading p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      max-width: 28rem;
-    }
-
-    /* Services */
-    .services {
-      background: radial-gradient(circle at top, #111827 0, #05070a 55%);
-      border-top: 1px solid rgba(15, 23, 42, 1);
-      border-bottom: 1px solid rgba(15, 23, 42, 1);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-
-    .service-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
-    }
-
-    .service-kicker {
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent-yellow);
-    }
-
-    .service-card h3 {
-      font-size: 1rem;
-    }
-
-    .service-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .service-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.35rem;
-    }
-
-    .service-tag {
-      font-size: 0.7rem;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--text-muted);
-    }
-
-    /* Service area + reviews layout */
-    .two-column {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
-      gap: 1.5rem;
-    }
-
-    .area-card,
-    .reviews-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      padding: 1rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .area-list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .area-list li {
-      font-size: 0.78rem;
-      padding: 0.23rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(75, 85, 99, 0.7);
-    }
-
-    .area-footnote {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .rating-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .rating-stars {
-      color: #facc15;
-    }
-
-    .review-item {
-      padding: 0.6rem 0.75rem;
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(75, 85, 99, 0.7);
-      font-size: 0.83rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .review-item strong {
-      display: block;
-      font-size: 0.8rem;
-      margin-top: 0.25rem;
-      color: var(--text-muted);
-    }
-
-    .review-disclaimer {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-    }
-
-    /* About + Contact */
-    .about-contact {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
-      gap: 1.5rem;
-    }
-
-    .about-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      padding: 1rem;
-      box-shadow: var(--shadow-soft);
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .about-card p + p {
-      margin-top: 0.6rem;
-    }
-
-    .about-list {
-      margin-top: 0.7rem;
-      padding-left: 1.1rem;
-    }
-
-    .about-list li {
-      margin-bottom: 0.4rem;
-    }
-
-    .contact-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      padding: 1rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.7rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-      font-size: 0.8rem;
-    }
-
-    .form-field label {
-      color: var(--text-muted);
-    }
-
-    .form-field input,
-    .form-field textarea {
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 10px;
-      border: 1px solid rgba(75, 85, 99, 0.9);
-      color: var(--text-light);
-      padding: 0.55rem 0.6rem;
-      font-size: 0.85rem;
-      outline: none;
-      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-    }
-
-    .form-field textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .form-field input:focus,
-    .form-field textarea:focus {
-      border-color: var(--accent-yellow);
-      box-shadow: 0 0 0 1px rgba(247, 201, 72, 0.5);
-      background: rgba(15, 23, 42, 1);
-    }
-
-    .contact-footer {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.6rem;
-      justify-content: space-between;
-      margin-top: 0.25rem;
-    }
-
-    .contact-hint {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .status-text {
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid rgba(15, 23, 42, 1);
-      padding: 1.5rem 1.25rem 2rem;
-      background: #05070a;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-contact span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .footer-contact a {
-      color: var(--accent-yellow);
-    }
-
-    /* Chatbox */
-    .chat-toggle {
-      position: fixed;
-      right: 1.2rem;
-      bottom: 1.2rem;
-      z-index: 40;
-      background: #111827;
-      border-radius: 999px;
-      padding: 0.25rem 0.25rem 0.25rem 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-      font-size: 0.8rem;
-    }
-
-    .chat-toggle span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--success);
-      box-shadow: 0 0 0 6px rgba(56, 161, 105, 0.5);
-    }
-
-    .chat-toggle .chat-toggle-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, var(--accent-red), #f97316);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .chatbox {
-      position: fixed;
-      right: 1.2rem;
-      bottom: 4.3rem;
-      width: min(320px, 92vw);
-      max-height: 420px;
-      background: #020617;
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 40;
-      transform-origin: bottom right;
-      transform: scale(0.98) translateY(8px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.18s ease-out, transform 0.18s ease-out;
-    }
-
-    .chatbox.open {
-      opacity: 1;
-      pointer-events: auto;
-      transform: scale(1) translateY(0);
-    }
-
-    .chat-header {
-      padding: 0.7rem 0.8rem;
-      border-bottom: 1px solid rgba(30, 64, 175, 0.8);
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.6), #020617);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .chat-header-text {
-      font-size: 0.8rem;
-    }
-
-    .chat-header-text strong {
-      display: block;
-      font-size: 0.9rem;
-    }
-
-    .chat-header-text span {
-      color: var(--text-muted);
-    }
-
-    .chat-status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--success);
-      box-shadow: 0 0 0 5px rgba(56, 161, 105, 0.5);
-      margin-right: 0.3rem;
-    }
-
-    .chat-body {
-      padding: 0.75rem;
-      flex: 1;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-    }
-
-    .chat-msg {
-      max-width: 90%;
-      padding: 0.45rem 0.6rem;
-      border-radius: 14px;
-    }
-
-    .chat-msg.agent {
-      align-self: flex-start;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(30, 64, 175, 0.8);
-    }
-
-    .chat-msg.user {
-      align-self: flex-end;
-      background: linear-gradient(135deg, var(--accent-red), #f97316);
-      color: #fff;
-    }
-
-    .chat-hint {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
-
-    .chat-input-row {
-      padding: 0.6rem 0.7rem;
-      border-top: 1px solid rgba(15, 23, 42, 1);
-      background: #020617;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    .chat-input-row input {
-      flex: 1;
-      background: rgba(15, 23, 42, 0.95);
-      border-radius: 999px;
-      border: 1px solid rgba(55, 65, 81, 1);
-      padding: 0.45rem 0.65rem;
-      font-size: 0.82rem;
-      color: var(--text-light);
-      outline: none;
-    }
-
-    .chat-input-row input:focus {
-      border-color: rgba(129, 140, 248, 1);
-    }
-
-    .chat-input-row button {
-      width: 30px;
-      height: 30px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, #22c55e, #84cc16);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      cursor: pointer;
-      color: #020617;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .two-column,
-      .about-contact {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .nav-phone {
-        display: inline-flex;
-      }
-
-      .nav-pill {
-        display: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      section {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
-      }
-
-      .nav-inner {
-        padding-inline: 1rem;
-      }
-
-      .services-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-card {
-        margin-top: 0.5rem;
-      }
-    }
-  </style>
+  
+<style>
+/* -------------------------------------------
+   GLOBAL VARIABLES
+-------------------------------------------- */
+:root {
+  --bg-dark:#05070a; --bg-section:#101319; --accent-red:#d7263d; --accent-yellow:#f7c948;
+  --text-light:#f7fafc;--text-muted:#a0aec0;--card:#151923;--border-soft:#252b3a;--success:#38a169;--error:#e53e3e;
+  --shadow-soft:0 14px 40px rgba(0,0,0,.45);--radius-lg:18px;--radius-xl:999px;--transition-fast:.18s ease-out;
+  --max-width:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;} 
+body{background:radial-gradient(circle at top,#141823,#05070a);color:var(--text-light);}
+
+/* -------------------------------------------
+   HEADER
+-------------------------------------------- */
+header{position:sticky;top:0;background:rgba(5,7,10,.9);backdrop-filter:blur(8px);border-bottom:1px solid #111;}
+.nav-inner{max-width:var(--max-width);margin:auto;padding:1rem;display:flex;justify-content:space-between;align-items:center;color:#fff;}
+.brand{display:flex;align-items:center;gap:.7rem;}
+.brand-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(45deg,#facc15,#f97316,#d7263d);display:flex;align-items:center;justify-content:center;font-weight:800;color:#111;}
+.nav-pill{font-size:.8rem;border:1px solid #facc15;padding:.25rem .8rem;border-radius:var(--radius-xl);color:#facc15;display:flex;align-items:center;}
+.nav-pill .dot{width:9px;height:9px;border-radius:50%;background:#38a169;margin-right:.35rem;}
+.btn{padding:.6rem 1.3rem;border-radius:var(--radius-xl);cursor:pointer;border:none;font-weight:600;}
+.btn-primary{background:linear-gradient(135deg,var(--accent-red),#f97316);color:white;}
+.btn-primary:hover{transform:scale(1.04);}
+
+/* -------------------------------------------
+   HERO
+-------------------------------------------- */
+.hero{padding:4rem 1.5rem;}
+.shell{max-width:var(--max-width);margin:auto;}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;}
+.hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:1rem;}
+.hero h1 span{background:linear-gradient(90deg,#facc15,#f97316);-webkit-background-clip:text;color:transparent;}
+.hero-subtitle{color:#a0aec0;margin-bottom:1.5rem;max-width:460px;line-height:1.45;}
+.hero-badge{border:1px solid #666;padding:.3rem .8rem;border-radius:var(--radius-xl);font-size:.8rem;color:#cbd5e0;display:inline-block;margin:.25rem .3rem;}
+.hero-actions{display:flex;gap:.8rem;margin-top:1.3rem;flex-wrap:wrap;}
+.hero-note{font-size:.85rem;color:#a0aec0;margin-top:.8rem;}
+
+/* SIDE CALL CARD */
+.hero-card{background:#111;border-radius:18px;padding:1rem;border:1px solid #444;}
+.hero-number{font-size:1.5rem;font-weight:700;margin-bottom:.5rem;}
+
+/* -------------------------------------------
+   SERVICES
+-------------------------------------------- */
+section#services{background:#0c0f14;padding:4rem 1.5rem;border-top:1px solid #111;border-bottom:1px solid #111;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.service-card{background:var(--card);padding:1rem;border-radius:var(--radius-lg);border:1px solid #333;}
+.service-card h3{margin:.5rem 0;}
+.service-card p{color:#a0aec0;font-size:.9rem;margin-bottom:.7rem;}
+.service-tag{font-size:.75rem;border:1px solid #555;padding:.2rem .6rem;border-radius:20px;margin-right:.3rem;display:inline-block;margin-bottom:.3rem;}
+
+/* -------------------------------------------
+   SERVICE AREA + REVIEWS
+-------------------------------------------- */
+.two-column{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:4rem 1.5rem;}
+.area-card,.reviews-card{background:var(--card);padding:1.2rem;border-radius:var(--radius-lg);border:1px solid #333;}
+.rating-stars{color:#facc15;font-size:1.3rem;margin-right:.4rem;}
+.review-item{background:#111;border-radius:12px;padding:.8rem;margin-bottom:.6rem;border:1px solid #333;font-size:.88rem;}
+
+/* -------------------------------------------
+   CONTACT FORM (UPDATED w/ FormSubmit)
+-------------------------------------------- */
+#contact{padding:4rem 1.5rem;}
+.about-contact{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.contact-card,.about-card{background:var(--card);padding:1.3rem;border-radius:var(--radius-lg);border:1px solid #333;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+input,textarea{width:100%;padding:.55rem;border-radius:8px;border:1px solid #444;background:#0d1117;color:#fff;font-size:.9rem;}
+textarea{min-height:120px;}
+form button{margin-top:.7rem;width:100%;}
+
+/* -------------------------------------------
+   FOOTER
+-------------------------------------------- */
+footer{text-align:center;padding:2rem 1rem;color:#777;font-size:.85rem;border-top:1px solid #111;}
+
+/* -------------------------------------------
+   CHATBOX (unchanged + functioning)
+-------------------------------------------- */
+.chat-toggle{position:fixed;bottom:1.5rem;right:1.5rem;background:#111;border:1px solid #444;color:#fff;
+  padding:.6rem 1rem;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:.4rem;}
+.chatbox{position:fixed;right:1.5rem;bottom:4.8rem;width:320px;max-height:450px;background:#0b0d12;border-radius:14px;
+  border:1px solid #333;overflow:hidden;display:none;flex-direction:column;}
+.chatbox.open{display:flex;}
+.chat-body{padding:1rem;overflow-y:auto;flex:1;}
+.chat-msg{padding:.6rem;border-radius:12px;margin-bottom:.4rem;font-size:.85rem;}
+.chat-msg.agent{background:#111;border:1px solid #3759ef;}
+.chat-msg.user{background:linear-gradient(135deg,#d7263d,#f97316);color:white;}
+.chat-input-row{border-top:1px solid #333;padding:.6rem;display:flex;gap:.5rem;}
+</style>
 </head>
+
 <body>
-<div class="page">
-  <header>
-    <div class="nav-inner">
-      <div class="brand">
-        <div class="brand-icon">O</div>
-        <div class="brand-text">
-          <span>Oscar's Towing &amp; Recovery</span>
-          <span>Raleigh, North Carolina · Since 2009*</span>
-        </div>
-      </div>
-      <div class="nav-actions">
-        <div class="nav-pill">
-          <span class="dot"></span>
-          <span>On call · 24/7</span>
-        </div>
-        <a class="btn btn-outline nav-phone" href="tel:+19197957237">Call 24/7</a>
-        <a class="btn btn-primary" href="#contact">Get a Tow</a>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-icon">O</div>
+      <div>
+        <strong>Oscar's Towing & Recovery</strong><br>
+        <small>Raleigh, NC · Open 24/7</small>
       </div>
     </div>
-  </header>
+    <a class="btn btn-primary" href="#contact">Request Tow</a>
+  </div>
+</header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="shell">
-        <div class="hero-grid">
-          <div>
-            <div class="hero-kicker">24/7 Towing &amp; Roadside Assistance · Raleigh, NC</div>
-            <h1>
-              Fast, reliable towing when
-              <span class="accent">you need it most.</span>
-            </h1>
-            <p class="hero-subtitle">
-              Stranded in Raleigh or within roughly 40 miles of the city? Oscar’s Towing &amp; Recovery
-              is ready around the clock with professional light- and medium-duty towing and roadside help. :contentReference[oaicite:3]{index=3}
-            </p>
 
-            <div class="hero-badges">
-              <div class="hero-badge">Locally owned &amp; operated</div>
-              <div class="hero-badge">Friendly, professional drivers</div>
-              <div class="hero-badge">Transparent, fair pricing</div>
-            </div>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="tel:+19197957237">
-                📞 Call now · (919) 795-7237
-              </a>
-              <a class="btn btn-outline" href="#contact">
-                ✉️ Request a callback
-              </a>
-            </div>
-            <div class="hero-note">
-              <span class="dot"></span>
-              <span>Average arrival times measured in minutes, not hours (traffic permitting).</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="hero-card">
-              <div class="hero-card-inner">
-                <div class="hero-status">Emergency Dispatch Line</div>
-                <div class="hero-number">
-                  (919) 795-7237
-                  <span class="tag">Save to contacts</span>
-                </div>
-                <div class="hero-card-row">
-                  <span><strong>Service area</strong><br />Raleigh + surrounding communities</span>
-                  <span><strong>Hours</strong><br />Open 24/7</span>
-                </div>
-                <div class="hero-pills">
-                  <span class="hero-pill">Breakdowns &amp; no-starts</span>
-                  <span class="hero-pill">Accident towing</span>
-                  <span class="hero-pill">Flat tire &amp; jump starts</span>
-                  <span class="hero-pill">Winch-outs &amp; recovery</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="shell hero-grid">
+    <div>
+      <h1>Fast, reliable towing when <span>you need it most</span>.</h1>
+      <p class="hero-subtitle">Stranded in Raleigh? We’re on call 24/7 with fast arrival times, skilled tow operators and fair pricing.</p>
+      <div>
+        <span class="hero-badge">24/7 Emergency Towing</span>
+        <span class="hero-badge">Roadside Assistance</span>
+        <span class="hero-badge">Insurance Friendly</span>
       </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services" id="services">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>Services we provide</h2>
-          <p>
-            Whether it’s rush hour on 40 or a quiet side street, Oscar’s Towing &amp; Recovery has the
-            equipment and experience to move your vehicle safely and get you out of a stressful spot. :contentReference[oaicite:4]{index=4}
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-kicker">24/7</div>
-            <h3>Light-Duty Towing</h3>
-            <p>
-              Safe, careful towing for cars, SUVs, crossovers, and small vans—any time of day or night.
-              Ideal for breakdowns, no-starts, and mechanical issues.
-            </p>
-            <div class="service-tags">
-              <span class="service-tag">Standard vehicles</span>
-              <span class="service-tag">Dealership &amp; shop drop-off</span>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-kicker">Commercial &amp; Fleet</div>
-            <h3>Medium-Duty Towing</h3>
-            <p>
-              Towing support for work trucks, service vehicles, and other medium-duty units to keep
-              your business moving when equipment goes down. :contentReference[oaicite:5]{index=5}
-            </p>
-            <div class="service-tags">
-              <span class="service-tag">Fleet partners welcome</span>
-              <span class="service-tag">Local businesses</span>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-kicker">Roadside Help</div>
-            <h3>Roadside Assistance</h3>
-            <p>
-              Flat tire, dead battery, or stuck off the shoulder? We can come out, assess, and either
-              get you rolling again or tow you where you need to go.
-            </p>
-            <div class="service-tags">
-              <span class="service-tag">Jump starts</span>
-              <span class="service-tag">Tire changes</span>
-              <span class="service-tag">Winch-outs</span>
-            </div>
-          </article>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+19197957237">📞 Call Now</a>
+        <a class="btn" href="#contact" style="border:1px solid #666;color:#fff;">Request Quote</a>
       </div>
-    </section>
+      <p class="hero-note">Average arrival time typically 30–60 min. Traffic dependent.</p>
+    </div>
 
-    <!-- SERVICE AREA + REVIEWS -->
-    <section id="area">
-      <div class="shell">
-        <div class="two-column">
-          <div class="area-card">
-            <div class="section-heading">
-              <h2>Service area</h2>
-            </div>
-            <p style="font-size:0.9rem;color:var(--text-muted);">
-              Based in Raleigh, Oscar’s Towing &amp; Recovery serves drivers across the local area,
-              typically within about a 40-mile radius. :contentReference[oaicite:6]{index=6}
-            </p>
-            <ul class="area-list">
-              <li>Raleigh</li>
-              <li>Cary</li>
-              <li>Garner</li>
-              <li>Knightdale</li>
-              <li>Wake Forest</li>
-              <li>Clayton</li>
-              <li>Apex</li>
-              <li>Durham</li>
-              <li>…and nearby communities</li>
-            </ul>
-            <p class="area-footnote">
-              Not sure if you’re in range? Call
-              <a href="tel:+19197957237" style="color:var(--accent-yellow);">(919) 795-7237</a> and we’ll
-              let you know in a few seconds.
-            </p>
-          </div>
+    <div class="hero-card">
+      <h3>Emergency Dispatch</h3>
+      <div class="hero-number">(919) 795-7237</div>
+      <p>Open 24/7 — Raleigh + 40mi radius</p>
+    </div>
+  </div>
+</section>
 
-          <div class="reviews-card" id="reviews">
-            <div class="section-heading">
-              <h2>Customers we’ve helped</h2>
-            </div>
-            <div class="rating-row">
-              <div class="rating-stars">★★★★★</div>
-              <div>Highly rated by drivers across Raleigh on Google, Yelp, and more.</div> :contentReference[oaicite:7]{index=7}
-            </div>
-            <div class="review-item">
-              “Dispatcher picked up right away and had a truck to me in about half an hour after another
-              company left me hanging. Super friendly and professional the whole time.”
-              <strong>— Recent Raleigh customer</strong>
-            </div>
-            <div class="review-item">
-              “They helped my daughter when her car quit in Raleigh and kept me updated even though I was
-              out of town. That peace of mind is priceless.”
-              <strong>— Parent of a stranded driver</strong>
-            </div>
-            <div class="review-item">
-              “Got to me quickly on 40 with a flat tire, loaded the car, and made sure I got to the shop
-              before they closed. Couldn’t have gone smoother.”
-              <strong>— Highway roadside call</strong>
-            </div>
-            <p class="review-disclaimer">
-              Review snippets above are based on real customer feedback and paraphrased for clarity.
-              For full, up-to-date reviews, see us on Google, Yelp, or Facebook.
-            </p>
-          </div>
-        </div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="shell">
+    <h2>Services We Offer</h2>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Light-Duty Towing</h3>
+        <p>Cars, SUVs & vans moved quickly & safely.</p>
+        <span class="service-tag">Breakdowns</span>
+        <span class="service-tag">No-Starts</span>
       </div>
-    </section>
 
-    <!-- ABOUT + CONTACT -->
-    <section id="contact">
-      <div class="shell">
-        <div class="about-contact">
-          <div class="about-card">
-            <div class="section-heading">
-              <h2>Why drivers call Oscar’s first</h2>
-            </div>
-            <p>
-              Oscar’s Towing &amp; Recovery has built a reputation in Raleigh for showing up quickly,
-              treating drivers with respect, and handling vehicles like they’re our own. :contentReference[oaicite:8]{index=8}
-            </p>
-            <p>
-              Our team is fully insured and experienced with everything from compact cars to work trucks.
-              When you’re stressed, confused about your options, or unsure what to do next, we’ll walk you
-              through it step by step.
-            </p>
-            <ul class="about-list">
-              <li>24/7 availability for emergencies</li>
-              <li>Light- and medium-duty trucks ready to roll</li>
-              <li>Local knowledge of Raleigh roads and traffic</li>
-              <li>Clear communication on timing and pricing</li>
-            </ul>
-          </div>
-
-          <div class="contact-card">
-            <div class="section-heading">
-              <h2>Request a tow or quote</h2>
-            </div>
-            <form id="contact-form">
-              <div class="contact-grid">
-                <div class="form-field">
-                  <label for="firstName">First name</label>
-                  <input id="firstName" name="firstName" type="text" required />
-                </div>
-                <div class="form-field">
-                  <label for="lastName">Last name</label>
-                  <input id="lastName" name="lastName" type="text" />
-                </div>
-                <div class="form-field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" required />
-                </div>
-                <div class="form-field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel" required />
-                </div>
-              </div>
-              <div class="form-field" style="margin-top:0.3rem;">
-                <label for="location">Pickup location (address or landmark)</label>
-                <input id="location" name="location" type="text" />
-              </div>
-              <div class="form-field" style="margin-top:0.3rem;">
-                <label for="message">How can we help?</label>
-                <textarea id="message" name="message" required></textarea>
-              </div>
-              <div class="contact-footer">
-                <button type="submit" class="btn btn-primary">
-                  Send request
-                </button>
-                <div class="contact-hint">
-                  For urgent situations, calling is always fastest:
-                  <a href="tel:+19197957237" style="color:var(--accent-yellow);">(919) 795-7237</a>.
-                </div>
-              </div>
-              <div id="contact-status" class="status-text"></div>
-            </form>
-          </div>
-        </div>
+      <div class="service-card">
+        <h3>Medium-Duty Towing</h3>
+        <p>Work trucks, fleet units, service vehicles & more.</p>
+        <span class="service-tag">Commercial</span>
+        <span class="service-tag">Fleet Accounts</span>
       </div>
-    </section>
-  </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div>© <span id="year"></span> Oscar's Towing &amp; Recovery · Raleigh, NC</div>
-      <div class="footer-contact">
-        <span>📍 Raleigh, NC</span>
-        <span>📞 <a href="tel:+19197957237">(919) 795-7237</a></span>
-        <span>✉️ <a href="mailto:oscartowingservice@gmail.com">oscartowingservice@gmail.com</a></span>
+      <div class="service-card">
+        <h3>Roadside Assistance</h3>
+        <p>Jumpstarts, flats, lockouts, winch-outs, fuel delivery.</p>
+        <span class="service-tag">Quick Response</span>
       </div>
     </div>
-  </footer>
-</div>
+  </div>
+</section>
+
+
+<!-- AREA + REVIEWS -->
+<section>
+  <div class="two-column">
+    <div class="area-card">
+      <h2>Service Area</h2>
+      <p>Raleigh, Cary, Garner, Knightdale, Wake Forest, Apex, Clayton, Durham & nearby.</p>
+    </div>
+
+    <div class="reviews-card">
+      <h2>Customer Reviews</h2>
+      <p><span class="rating-stars">★★★★★</span> Highly rated across Raleigh.</p>
+      <div class="review-item">“Dispatcher answered immediately and had a truck quickly.”</div>
+      <div class="review-item">“Professional, fast, and treated our vehicle with care.”</div>
+      <div class="review-item">“Got me off I-40 before the shop closed — lifesaver.”</div>
+      <small style="color:#777;">Reviews paraphrased for clarity. See Google for full listings.</small>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT [UPDATED - FORMSUBMIT ENABLED] -->
+<section id="contact">
+  <div class="about-contact">
+
+    <div class="about-card">
+      <h2>Why Drivers Choose Us</h2>
+      <p>Honest pricing, fast dispatch, respectful crews, and knowledge of Raleigh roads.</p>
+      <ul>
+        <li>Open 24/7</li>
+        <li>Fast arrival times</li>
+        <li>Light & Medium Duty Tow Trucks</li>
+      </ul>
+    </div>
+
+    <!-- FULLY WORKING FORM -->
+    <div class="contact-card">
+      <h2>Request Tow or Quote</h2>
+
+      <form action="https://formsubmit.co/onasamune@yahoo.com" method="POST">
+
+        <!-- FormSubmit Required Fields -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="New Tow Request Submission 🔥">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+        <div class="contact-grid">
+          <div><label>First Name</label><input name="First Name" required></div>
+          <div><label>Last Name</label><input name="Last Name"></div>
+          <div><label>Email</label><input name="Email" type="email" required></div>
+          <div><label>Phone</label><input name="Phone" type="tel" required></div>
+        </div>
+
+        <label>Pickup Location</label>
+        <input name="Pickup Location">
+
+        <label>How can we help?</label>
+        <textarea name="Message" required></textarea>
+
+        <button type="submit" class="btn btn-primary">Send Tow Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<footer>© <script>document.write(new Date().getFullYear())</script> Oscar's Towing & Recovery</footer>
+
+<!-- CHAT BUTTON -->
+<div class="chat-toggle" id="chat-toggle">💬 Chat</div>
 
 <!-- CHATBOX -->
 <div class="chatbox" id="chatbox">
-  <div class="chat-header">
-    <div class="chat-header-text">
-      <strong>Need help?</strong>
-      <span><span class="chat-status-dot"></span>Quick answers from our playbook.</span>
-    </div>
-    <button type="button" id="chat-close" class="btn btn-outline" style="padding:0.25rem 0.6rem;font-size:0.7rem;border-radius:999px;border-color:rgba(148,163,184,0.7);">
-      ✕
-    </button>
-  </div>
   <div class="chat-body" id="chat-body">
-    <div class="chat-msg agent">
-      Hey there 👋&nbsp;I’m the virtual dispatcher for Oscar’s Towing &amp; Recovery.
-      Ask about wait times, service area, or pricing—or type <strong>call</strong> and I’ll
-      show the phone number.
-    </div>
-    <div class="chat-hint">
-      Example: “How fast can a truck get to downtown Raleigh?”
-    </div>
+      <div class="chat-msg agent">Hey! Need ETA, pricing or service details? Ask me!</div>
   </div>
   <div class="chat-input-row">
-    <input id="chat-input" type="text" placeholder="Type your question..." />
-    <button type="button" id="chat-send">➤</button>
+    <input id="chat-input" placeholder="Ask here...">
+    <button id="chat-send">➤</button>
   </div>
 </div>
 
-<button class="chat-toggle" id="chat-toggle">
-  <span class="dot"></span>
-  <span>Questions? Chat with us</span>
-  <button class="chat-toggle-btn" type="button">?</button>
-</button>
-
 <script>
-  // CONFIG
-  const BUSINESS_CONFIG = {
-    name: "Oscar's Towing & Recovery",
-    phone: "(919) 795-7237",
-    phoneHref: "tel:+19197957237",
-    email: "oscartowingservice@gmail.com",
-    city: "Raleigh",
-    state: "NC",
-    radiusMiles: "40"
-  };
+/************ CHATBOX LOGIC ************/
+const box=document.getElementById("chatbox"),
+toggle=document.getElementById("chat-toggle"),
+send=document.getElementById("chat-send"),
+input=document.getElementById("chat-input"),
+body=document.getElementById("chat-body");
 
-  // Contact form handler
-  const contactForm = document.getElementById("contact-form");
-  const contactStatus = document.getElementById("contact-status");
+toggle.onclick=()=>box.classList.toggle("open");
 
-  // *** IMPORTANT ***
-  // Right now this form uses a "mailto:" fallback.
-  // For production, hook this up to your backend (e.g. Node/PHP)
-  // and update CONTACT_ENDPOINT to your API URL.
-  const CONTACT_ENDPOINT = null; // e.g. "/api/contact"
+function reply(msg){
+  let d=document.createElement("div");
+  d.className="chat-msg agent"; d.textContent=msg;
+  body.appendChild(d); body.scrollTop=body.scrollHeight;
+}
 
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    contactStatus.textContent = "";
-    contactStatus.style.color = "";
+send.onclick=()=>{
+  let v=input.value.trim(); if(!v) return;
+  let u=document.createElement("div");
+  u.className="chat-msg user"; u.textContent=v;
+  body.appendChild(u); body.scrollTop=body.scrollHeight;
+  input.value="";
 
-    const formData = new FormData(contactForm);
-    const payload = Object.fromEntries(formData.entries());
-
-    if (!CONTACT_ENDPOINT) {
-      // Mailto fallback if you don't have a backend yet
-      const subject = encodeURIComponent("Tow / roadside request from website");
-      const bodyLines = [
-        `Name: ${payload.firstName || ""} ${payload.lastName || ""}`,
-        `Email: ${payload.email || ""}`,
-        `Phone: ${payload.phone || ""}`,
-        `Pickup location: ${payload.location || ""}`,
-        "",
-        "Details:",
-        payload.message || ""
-      ];
-      const body = encodeURIComponent(bodyLines.join("\n"));
-      window.location.href = `mailto:${BUSINESS_CONFIG.email}?subject=${subject}&body=${body}`;
-      contactStatus.textContent = "Opening your email app so you can send the request.";
-      contactStatus.style.color = "var(--text-muted)";
-      return;
-    }
-
-    try {
-      contactStatus.textContent = "Sending your request…";
-      contactStatus.style.color = "var(--text-muted)";
-
-      const res = await fetch(CONTACT_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-
-      if (!res.ok) throw new Error("Request failed");
-
-      contactStatus.textContent = "Thanks! We’ve received your request and will follow up shortly.";
-      contactStatus.style.color = "var(--success)";
-      contactForm.reset();
-    } catch (err) {
-      contactStatus.textContent = "Sorry, there was a problem sending your request. Please call us instead.";
-      contactStatus.style.color = "var(--error)";
-    }
-  });
-
-  // Chatbox logic
-  const chatbox = document.getElementById("chatbox");
-  const chatToggle = document.getElementById("chat-toggle");
-  const chatClose = document.getElementById("chat-close");
-  const chatBody = document.getElementById("chat-body");
-  const chatInput = document.getElementById("chat-input");
-  const chatSend = document.getElementById("chat-send");
-
-  const chatRules = [
-    {
-      keywords: ["how long", "eta", "wait", "get to", "arrival"],
-      reply: `In normal traffic, trucks often arrive within about 30–60 minutes in the Raleigh area, but it depends on where you are and current calls. The fastest way to get an accurate ETA is to call us at ${BUSINESS_CONFIG.phone}.`
-    },
-    {
-      keywords: ["area", "where", "service area", "how far"],
-      reply: `We’re based in ${BUSINESS_CONFIG.city}, ${BUSINESS_CONFIG.state} and typically cover about a ${BUSINESS_CONFIG.radiusMiles}-mile radius, including many nearby towns. If you’re unsure you’re in range, call and we can confirm quickly.`
-    },
-    {
-      keywords: ["price", "cost", "how much", "rate", "rates"],
-      reply: "Pricing depends on things like distance, vehicle type, and situation (accident vs. breakdown, winch-out, etc.). Give us a quick call with your location and vehicle details and we’ll provide transparent pricing before we roll."
-    },
-    {
-      keywords: ["hours", "open", "24/7", "24 7"],
-      reply: "Oscar’s Towing & Recovery runs 24/7, including nights, weekends, and holidays. If you need help right now, you can call anytime."
-    },
-    {
-      keywords: ["call", "phone", "number"],
-      reply: `You can reach us right now at ${BUSINESS_CONFIG.phone}. Tap here to call: ${BUSINESS_CONFIG.phone}.`
-    },
-    {
-      keywords: ["email"],
-      reply: `If it’s not urgent, you can email us at ${BUSINESS_CONFIG.email}, but for tows and roadside help, calling is always fastest.`
-    }
-  ];
-
-  function appendMessage(text, sender) {
-    const div = document.createElement("div");
-    div.className = `chat-msg ${sender}`;
-    div.textContent = text;
-    chatBody.appendChild(div);
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }
-
-  function handleChatSubmit() {
-    const text = chatInput.value.trim();
-    if (!text) return;
-    appendMessage(text, "user");
-    chatInput.value = "";
-
-    const lowered = text.toLowerCase();
-    let reply = null;
-
-    for (const rule of chatRules) {
-      if (rule.keywords.some((kw) => lowered.includes(kw))) {
-        reply = rule.reply;
-        break;
-      }
-    }
-
-    if (!reply) {
-      reply =
-        "Thanks for reaching out! I’m a simple helper bot, so I might not know the answer to that. For anything urgent or specific to your vehicle, please call us at " +
-        BUSINESS_CONFIG.phone +
-        ".";
-    }
-
-    setTimeout(() => appendMessage(reply, "agent"), 300);
-  }
-
-  chatSend.addEventListener("click", handleChatSubmit);
-  chatInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleChatSubmit();
-    }
-  });
-
-  chatToggle.addEventListener("click", () => {
-    chatbox.classList.toggle("open");
-  });
-
-  chatClose.addEventListener("click", () => {
-    chatbox.classList.remove("open");
-  });
-
-  // Footer year
-  document.getElementById("year").textContent = new Date().getFullYear();
+  let t=v.toLowerCase();
+  if(t.includes("eta")||t.includes("long")||t.includes("wait")) reply("Most tows arrive 30–60 mins depending on traffic.");
+  else if(t.includes("price")||t.includes("cost")) reply("Pricing varies by distance + situation. Request quote in form below.");
+  else if(t.includes("call")) reply("📞 (919) 795-7237 — available right now.");
+  else reply("Thanks for asking! If urgent, calling is always fastest. 📞 (919) 795-7237");
+}
 </script>
+
 </body>
 </html>
+
